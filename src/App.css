@@ -1,38 +1,143 @@
-.App {
-  text-align: center;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+    background: #f3f6fb;
+    font-family: "Segoe UI", sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.app {
+    min-height: 100vh;
+
+    display: grid;
+
+    grid-template-rows:
+            80px
+            1fr
+            70px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* HEADER */
+
+.header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+
+    align-items: center;
+
+    padding: 0 40px;
+
+    background: #1e293b;
+    color: white;
+
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
 }
 
-.App-link {
-  color: #61dafb;
+.logo {
+    font-size: 24px;
+    font-weight: bold;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.nav {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 20px;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+
+    padding: 10px 15px;
+    border-radius: 10px;
+
+    transition: 0.3s;
+}
+
+.nav a:hover {
+    background: rgba(255,255,255,0.15);
+}
+
+.nav a.active {
+    background: #2563eb;
+}
+
+/* MAIN */
+
+.main {
+    display: grid;
+
+    grid-template-columns:
+            1fr
+            3fr
+            1fr;
+
+    gap: 20px;
+
+    padding: 20px;
+}
+
+.section,
+.article,
+.aside {
+    background: white;
+
+    border-radius: 16px;
+
+    padding: 20px;
+
+    box-shadow:
+            0 4px 12px rgba(0,0,0,0.08);
+}
+
+.section h2,
+.aside h2 {
+    margin-bottom: 15px;
+}
+
+.article h1 {
+    margin-bottom: 20px;
+
+    color: #1e293b;
+}
+
+.article p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.sideImage {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+
+/* FOOTER */
+
+.footer {
+    background: #1e293b;
+    color: white;
+
+    display: grid;
+
+    grid-auto-flow: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 40px;
+}
+
+/* 404 */
+
+.notFound {
+    text-align: center;
+}
+
+.notFound h1 {
+    font-size: 72px;
+    color: #dc2626;
 }
